@@ -14,7 +14,7 @@ jobs:
       run: brew update && brew install git && curl --show-error --silent https://getcomposer.org/installer | php && php bin/composer.phar install --no-scripts --no-progress && bin/phpunit tests/Unit
             
     - name: test integration
-      run: brew update && brew install git && curl --show-error --silent https://getcomposer.org/installer | php && php bin/composer.phar install --no-scripts --no-progress && bin/phpunit tests/Unit
+      run: brew update && brew install git && curl --show-error --silent https://getcomposer.org/installer | php && php bin/composer.phar install --no-scripts --no-progress && bin/phpunit tests/Integration
             
     - name: test fonctionnel
       run: brew update && brew install git && curl --show-error --silent https://getcomposer.org/installer | php && php bin/composer.phar install --no-scripts --no-progress && php vendor/bin/behat
