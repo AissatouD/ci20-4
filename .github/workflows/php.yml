@@ -9,10 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
-    - name: during script
-      run: composer install && composer install git && curl --show-error --silent https://getcomposer.org/installer | php && php bin/composer.phar install --no-scripts --no-progress  
-   
+      
     - name: test unit
       run: composer install && composer install git && curl --show-error --silent https://getcomposer.org/installer | php && php bin/composer.phar install --no-scripts --no-progress
           - bin/phpunit tests/Unit
