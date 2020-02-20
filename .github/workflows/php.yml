@@ -1,0 +1,32 @@
+name: PHP Composer
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: during script
+      run: composer install && composer install git && curl --show-error --silent https://getcomposer.org/installer | php && php bin/composer.phar install --no-scripts --no-progress  
+   
+    - name: test unit
+      run: composer install && composer install git && curl --show-error --silent https://getcomposer.org/installer | php && php bin/composer.phar install --no-scripts --no-progress
+          - bin/phpunit tests/Unit
+            
+    - name: test integration
+      run: composer install && composer install git && curl --show-error --silent https://getcomposer.org/installer | php && php bin/composer.phar install --no-scripts --no-progress
+          - bin/phpunit tests/Integration  
+            
+    - name: test fonctionnel
+      run: composer install && composer install git && curl --show-error --silent https://getcomposer.org/installer | php && php bin/composer.phar install --no-scripts --no-progress
+          php vendor/bin/behat
+
+    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
+    # Docs: https://getcomposer.org/doc/articles/scripts.md
+
+    # - name: Run test suite
+    #   run: composer run-script test
