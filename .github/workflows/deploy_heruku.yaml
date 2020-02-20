@@ -13,4 +13,4 @@ jobs:
         with:
           ruby-version: 2.6
       - run: gem install dpl
-      - run: dpl --provider=heroku --app=${{ secrets.HEROKU_APP_NAME}} --api-key=${{secrets.HEROKU_API_KEY}}
+      - run: dpl --provider=heroku --app=${{ secrets.heroku_app_name}} --api-key=${{secrets.heroku_api_key}}
