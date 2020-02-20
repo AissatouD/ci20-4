@@ -12,11 +12,11 @@ jobs:
       
     - name: test unit
       run: brew update && brew install git && curl --show-error --silent https://getcomposer.org/installer | php && php bin/composer.phar install --no-scripts --no-progress
-          - bin/phpunit tests/Unit
+          - composer require - bin/phpunit tests/Unit
             
     - name: test integration
       run: brew update && brew install git && curl --show-error --silent https://getcomposer.org/installer | php && php bin/composer.phar install --no-scripts --no-progress
-          - bin/phpunit tests/Integration  
+          - composer require - bin/phpunit tests/Unit
             
     - name: test fonctionnel
       run: brew update && brew install git && curl --show-error --silent https://getcomposer.org/installer | php && php bin/composer.phar install --no-scripts --no-progress
